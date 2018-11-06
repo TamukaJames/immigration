@@ -1,25 +1,48 @@
+﻿<?php
+   session_start();
+   echo"<script type=”text/javascript”>
+      alert(“hi”);
+  </script>";
+   if(isset($_POST["Login"])) {
+      // username and password sent from form 
+      $db = mysqli_connect("localhost","root","","passports");
+      $username = mysqli_real_escape_string($db,$_POST['username']);
+      $password = mysqli_real_escape_string($db,$_POST['password']); 
+   /*if (empty($username)) {
+    array_push($errors, "Username is required");
+   }//THIS WILL BE USED INCASE THE LOGIN FORM REQUIRED ATTRIBUTE ISN'T PLACED
+   if (empty($password)) {
+    echo "Password is required";
+   }*/
+   if($count == 1) {
+     session_register("username");
+     $_SESSION['login_user'] = $username; 
+     header("location:passportapp.html");
+   } else {
+     echo "Your Login Name or Password is invalid";
+   }   
+      $sql = "SELECT id FROM users WHERE username = '$username' and password = '$password'";
+      $result = mysqli_query($db,$sql);
+      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+      $active = $row['active'];
+      
+      $count = mysqli_num_rows($result);
+      
+      // If result matched $myusername and $mypassword, table row must be 1 row
+		
+   }
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Contact Us</title>
-
-
+  <title>Login</title>
   <link href="bs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  
-  <link href="css/styles.css" rel="stylesheet">
-
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-  <!-- Navigation -->
+
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container">
       <a class="navbar-brand" href="index.html"><img src="./images/logo.png" alt="Registrer General Logo" /></a>
@@ -53,59 +76,48 @@
 
     </div>
   </nav>
+  <br>
+  <br>
+  <br>
+  <!--Begin form--->
+  <div class="row">
+    <div class="col col-4">
 
-  <!--End Navigation-->
-
-  <body>
-    <br>
-    <br>
-    <div class="container">
-      <div class="row">
-        <div class="col-8">
-          <form>
-            <div class="form-group">
-              <label for="Email Adress">Name</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Name">
-            </div>
-            <div class="form-group">
-              <label for="Email Adress">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-              <small id="emailHelp" class="form-text text-muted">Your email will be private, we will use it to get back
-                to you.
-              </small>
-            </div>
-            <div class="form-group">
-              <label for="Email Adress">Message</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Please Enter Your Message">
-            </div>
-            <button type="submit" class="btn btn-success">Submit</button>
-          </form>
-
-        </div>
-        <div class="col-4">
-          <p>For questions and other communications and enquiries, you can reach the registrar's Department either using the form above or
-            on the below communication channels.
-          </p>
-          <p>
-            <strong>Call:</strong> +263 4 555 555
-          </p>
-          <p>
-            <strong>Email:</strong> info@registrars.co.zw
-          </p>
-          <p>
-            <p>
-              <strong>Address</strong>
-            </p>
-            13 Stortford Lane, Harare CBD, Zimbabwe
-          </p>
-        </div>
-      </div>
     </div>
-    <br>
-  </body>
+    <div class="col col-4 jumbotron">
+      <div class="header">
+        <h2 align="center">Login to access your data</h2>
+        <p><i>Please enter your login details to access your data</i></p>
+      </div>
 
-  <!-- Footer -->
-  <footer class="page-footer font-small bg-dark pt-4">
+      <form method="post" action="passportapp.html">
+        <div class="input-group">
+          <label>Username: </label>
+          <input type="text" name="username" required>
+        </div>
+        <br>
+        <div class="input-group">
+          <br>
+          <label>Password: </label>
+          <input type="password" name="password" required>
+        </div>
+        <br>
+        <div class="input-group">
+          <button type="submit" class="btn-dark primary" name="login_user">Login</button>
+        </div>
+        <br>
+        <p align="center">
+          <i>
+          Not yet a member? <a href="registration.php">Sign up</a>
+          </i>
+        </p>
+      </form>
+    </div>
+    <div class="col col-4">
+    </div>
+  </div>
+</body>
+<footer class="page-footer font-small bg-dark pt-4">
     <!-- Footer Links -->
     <div class="container-fluid text-center text-md-left">
 
@@ -148,17 +160,5 @@
       © 2018 Copyright: <a href="#">Zimbabwe Department of Immigration</a>
     </div>
   </footer>
-  <!-- Footer -->
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="bs/jquery/jquery.min.js"></script>
-  <script src="bs/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Contact form JavaScript -->
-  <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
-  <script src="js/jqBootstrapValidation.js"></script>
-  <script src="js/contact_me.js"></script>
-
-</body>
 
 </html>

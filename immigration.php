@@ -1,21 +1,65 @@
+<?php
+echo "<P> <script type='text/javascript'>alert:(you must first be registered to apply for a passport)</script></P>";
+  $servername = "localhost";
+  $user = "root";
+  $pass = "";
+  $db = "immigration";//database name create one 
+  //connecting to the database
+  $conn = new mysqli($servername,$user,$pass,$db) or die("unable to connect to database");
+if(isset($_POST['submit']))
+{
+    $idnumz = $_POST['idnum'];
+    $benumz = $_POST['benum']; 
+    $surnamez = $_POST['surname'];
+    $fnamez = $_POST['fname'];
+    $namechangz = $_POST['namechang'];
+    $chngtimesz =$_POST['chngtimes'];
+    $maritalz = $_POST['marital'];
+    $sexz = $_POST['sex'];
+    $dobz = $_POST['dob'];
+    $countryz = $_POST['country'];
+    $dateofmz = $_POST['dateofm'];
+    $spousenamez = $_POST['spousename'];
+    $placeofmz = $_POST['placeofm'];
+    $spousez = $_POST['spouse'];
+    $marriedoncez = $_POST['marriedonce'];
+    $kinz = $_POST['kin'];
+    $kinrelz = $_POST['kinrel'];
+    $kinresz = $_POST['kinres'];
+    $kinnumz = $_POST['kinnum'];
+    $citizenshipz = $_POST['citizenship'];
+    $radiotravz = $_POST['radiotrav'];
+    $foreignpassz = $_POST['foreignpass'];
+    $fpdetailsz = $_POST['fpdetails'];
+    $radiobrz = $_POST['radiobr'];
+    $paspnoz = $_POST['paspno'];
+    $lostpassnoz = $_POST['lostpassno'];
+    $issdatez = $_POST['issdate'];
+    $bnamez = $_POST['bname'];
+    $lostreasonz = $_POST['lostreason'];
+
+    $query  = "INSERT INTO appform (idnum, benum, surname, fname, namechng, chngtimes, marital, sex, dob, country, dateofm, spousename, placeofm, spouse, marriedonce, kin, kinrel, kinres, kinnum, citizenship, radiotrav, foreignpass, fpdetails, radiobr, paspno, lostpassno, issdate, bname, lostreason) VALUES($idnumz, $benumz,$surnamez,$fnamez,$namechangz,$chngtimesz,$maritalz,$sexz,$dobz,$countryz,$dateofmz,$spousenamez,$placeofmz, $spousez,$marriedoncez,$kinz,$kinrelz,$kinresz,$kinnumz,$citizenshipz,$radiotravz,$foreignpassz,$fpdetailsz,$radiobrz,$paspnoz,$lostpassnoz,$issdatez,$bnamez,$lostreasonz)";
+
+    $result = $conn->query($query);  
+        if (!$result) die ("Database access failed: " . $conn->error); 
+}
+    ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Contact Us</title>
-
-
-  <link href="bs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <meta content="" name="description">
+  <meta content="" name="author">
+  <title>Zimbabwe Online Passport Application</title>
   
+  <link href="bs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+ 
   <link href="css/styles.css" rel="stylesheet">
-
+  <script src="/bs/jquery/jquery.min.js"></script>
 </head>
 
 <body>
@@ -53,59 +97,15 @@
 
     </div>
   </nav>
-
   <!--End Navigation-->
-
-  <body>
-    <br>
-    <br>
-    <div class="container">
-      <div class="row">
-        <div class="col-8">
-          <form>
-            <div class="form-group">
-              <label for="Email Adress">Name</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Name">
-            </div>
-            <div class="form-group">
-              <label for="Email Adress">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-              <small id="emailHelp" class="form-text text-muted">Your email will be private, we will use it to get back
-                to you.
-              </small>
-            </div>
-            <div class="form-group">
-              <label for="Email Adress">Message</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Please Enter Your Message">
-            </div>
-            <button type="submit" class="btn btn-success">Submit</button>
-          </form>
-
-        </div>
-        <div class="col-4">
-          <p>For questions and other communications and enquiries, you can reach the registrar's Department either using the form above or
-            on the below communication channels.
-          </p>
-          <p>
-            <strong>Call:</strong> +263 4 555 555
-          </p>
-          <p>
-            <strong>Email:</strong> info@registrars.co.zw
-          </p>
-          <p>
-            <p>
-              <strong>Address</strong>
-            </p>
-            13 Stortford Lane, Harare CBD, Zimbabwe
-          </p>
-        </div>
-      </div>
+  <br>
+  <br>
+  <br>
+  <div class="container jumbotron">
+  <h2 align="center">Your information has been successfully recorded and added. Feel free to browse around the site to learn more about the immigration Department</h2>
     </div>
-    <br>
-  </body>
 
-  <!-- Footer -->
-  <footer class="page-footer font-small bg-dark pt-4">
+<footer class="page-footer font-small bg-dark pt-4">
     <!-- Footer Links -->
     <div class="container-fluid text-center text-md-left">
 
@@ -148,17 +148,3 @@
       © 2018 Copyright: <a href="#">Zimbabwe Department of Immigration</a>
     </div>
   </footer>
-  <!-- Footer -->
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="bs/jquery/jquery.min.js"></script>
-  <script src="bs/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Contact form JavaScript -->
-  <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
-  <script src="js/jqBootstrapValidation.js"></script>
-  <script src="js/contact_me.js"></script>
-
-</body>
-
-</html>

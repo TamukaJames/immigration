@@ -1,3 +1,4 @@
+
 <html>
     <body>
         <?php
@@ -18,35 +19,35 @@
         //inserting
 
         $sql = "INSERT INTO appform (idnum, benum, surname, fname, namechng, chngtimes, marital, sex, dob, country, dateofm, spousename, placeofm, spouse, marriedonce, kin, kinrel, kinres, kinnum, citizenship, radiotrav, foreignpass, fpdetails, radiobr, paspno, lostpassno, issdate, bname, lostreason) 
-        VALUES ($_POST['idnum'], 
-        $_POST['benum'], 
-        $_POST['surname'], 
-        $_POST['fname'],
-        $_POST['namechang'],
-        $_POST['chngtimes'],
-        $_POST['marital'],
-        $_POST['sex'],
-        $_POST['dob'],
-        $_POST['country'],
-        $_POST['dateofm'],
-        $_POST['spousename'],
-        $_POST['placeofm'],
-        $_POST['spouse'],
-        $_POST['marriedonce'],
-        $_POST['kin'],
-        $_POST['kinrel'],
-        $_POST['kinres'],
-        $_POST['kinnum'],
-        $_POST['citizenship'],
-        $_POST['radiotrav'],
-        $_POST['foreignpass'],
-        $_POST['fpdetails'],
-        $_POST['radiobr'],
-        $_POST['paspno'],
-        $_POST['lostpassno'],
-        $_POST['issdate'],
-        $_POST['bname'],
-        $_POST['lostreason']
+        VALUES ($_POST('idnum'), 
+        $_POST('benum'), 
+        $_POST('surname'), 
+        $_POST('fname'),
+        $_POST('namechang'),
+        $_POST('chngtimes'),
+        $_POST('marital'),
+        $_POST('sex'),
+        $_POST('dob'),
+        $_POST('country'),
+        $_POST('dateofm'),
+        $_POST('spousename'),
+        $_POST('placeofm'),
+        $_POST('spouse'),
+        $_POST('marriedonce'),
+        $_POST('kin'),
+        $_POST('kinrel'),
+        $_POST('kinres'),
+        $_POST('kinnum'),
+        $_POST('citizenship'),
+        $_POST('radiotrav'),
+        $_POST('foreignpass'),
+        $_POST('fpdetails'),
+        $_POST('radiobr'),
+        $_POST('paspno'),
+        $_POST('lostpassno'),
+        $_POST('issdate'),
+        $_POST('bname'),
+        $_POST('lostreason')
         )";
         
         if (mysqli_query($conn, $sql)) {
