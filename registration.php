@@ -47,7 +47,7 @@ echo "<P> <script type='text/javascript'>alert:(you must first be registered to 
 </head>
 
 <body>
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container">
       <a class="navbar-brand" href="index.html"><img src="./images/logo.png" alt="Registrer General Logo" /></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
