@@ -3,7 +3,7 @@ echo "<P> <script type='text/javascript'>alert:(you must first be registered to 
   $servername = "localhost";
   $user = "root";
   $pass = "";
-  $db = "passports";//database name create one 
+  $db = "immigration";//database name create one 
   //connecting to the database
   $conn = new mysqli($servername,$user,$pass,$db) or die("unable to connect to database");
   session_start();
@@ -44,10 +44,11 @@ echo "<P> <script type='text/javascript'>alert:(you must first be registered to 
   <title>Registration form</title>
   <link href="bs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="/bs/jquery/jquery.min.js"></script>
 </head>
 
 <body>
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container">
       <a class="navbar-brand" href="index.html"><img src="./images/logo.png" alt="Registrer General Logo" /></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
@@ -118,8 +119,8 @@ echo "<P> <script type='text/javascript'>alert:(you must first be registered to 
         </div>
         <br>
         <p><i>
-          Already a member? <a href="login.php">Sign in</a>
-        </i></p>
+            Already a member? <a href="login.php">Sign in</a>
+          </i></p>
       </form>
     </div>
     <div class="col col-4">
@@ -134,9 +135,10 @@ echo "<P> <script type='text/javascript'>alert:(you must first be registered to 
 
         <div class="col-lg-6 mt-md-0 mt-3">
 
-          <h5 class="text-uppercase foot">The Department you can trust</h5>
+          <h5 class="text-uppercase foot" style="color: white">The Department you can trust</h5>
           <br>
-          <p class="foot">If you encounter any problems while using this site, please don't hesitate to contact the
+          <p class="foot" style="color: white">If you encounter any problems while using this site, please don't
+            hesitate to contact the
             department to
             give your feeback</p>
         </div>
@@ -149,26 +151,28 @@ echo "<P> <script type='text/javascript'>alert:(you must first be registered to 
           <h5 class="text-uppercase foot">Links</h5>
           <ul class="list-unstyled">
             <li>
-              <a href="#!">Home</a>
+              <a href="index.html">Home</a>
             </li>
             <li>
-              <a href="#!">Passport Application</a>
+              <a href="immigration.php">Passport Application</a>
             </li>
             <li>
-              <a href="#!">About US</a>
+              <a href="vision.html">About US</a>
             </li>
             <li>
-              <a href="#!">Contact US</a>
+              <a href="contact.html">Contact US</a>
             </li>
           </ul>
         </div>
       </div>
     </div>
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3 foot">
+    <div class="footer-copyright text-center py-3 foot" style="color: white">
       © 2018 Copyright: <a href="#">Zimbabwe Department of Immigration</a>
     </div>
   </footer>
 </body>
+<script src="bs/jquery/jquery.min.js"></script>
+<script src="bs/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </html>

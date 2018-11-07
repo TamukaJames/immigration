@@ -5,7 +5,7 @@
   </script>";
    if(isset($_POST["Login"])) {
       // username and password sent from form 
-      $db = mysqli_connect("localhost","root","","passports");
+      $db = mysqli_connect("localhost","root","","immigration");
       $username = mysqli_real_escape_string($db,$_POST['username']);
       $password = mysqli_real_escape_string($db,$_POST['password']); 
    /*if (empty($username)) {
@@ -39,6 +39,7 @@
   <title>Login</title>
   <link href="bs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="/bs/jquery/jquery.min.js"></script>
 </head>
 
 <body>
@@ -108,7 +109,7 @@
         <br>
         <p align="center">
           <i>
-          Not yet a member? <a href="registration.php">Sign up</a>
+            Not yet a member? <a href="registration.php">Sign up</a>
           </i>
         </p>
       </form>
@@ -118,47 +119,51 @@
   </div>
 </body>
 <footer class="page-footer font-small bg-dark pt-4">
-    <!-- Footer Links -->
-    <div class="container-fluid text-center text-md-left">
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left">
 
-      <div class="row">
+    <div class="row">
 
-        <div class="col-lg-6 mt-md-0 mt-3">
+      <div class="col-lg-6 mt-md-0 mt-3">
 
-          <h5 class="text-uppercase foot">The Department you can trust</h5>
-          <br>
-          <p class="foot">If you encounter any problems while using this site, please don't hesitate to contact the
-            department to
-            give your feeback</p>
-        </div>
-        <hr class="clearfix w-100 d-md-none pb-3">
+        <h5 class="text-uppercase foot" style="color: white">The Department you can trust</h5>
+        <br>
+        <p class="foot" style="color: white">If you encounter any problems while using this site, please don't hesitate
+          to contact the
+          department to
+          give your feeback</p>
+      </div>
+      <hr class="clearfix w-100 d-md-none pb-3">
 
-        <div class="col-md-3 mb-md-0 mb-3"></div>
+      <div class="col-md-3 mb-md-0 mb-3"></div>
 
-        <div class="col-md-3 mb-md-0 mb-3">
+      <div class="col-md-3 mb-md-0 mb-3">
 
-          <h5 class="text-uppercase foot">Links</h5>
-          <ul class="list-unstyled">
-            <li>
-              <a href="#!">Home</a>
-            </li>
-            <li>
-              <a href="#!">Passport Application</a>
-            </li>
-            <li>
-              <a href="#!">About US</a>
-            </li>
-            <li>
-              <a href="#!">Contact US</a>
-            </li>
-          </ul>
-        </div>
+        <h5 class="text-uppercase foot">Links</h5>
+        <ul class="list-unstyled">
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="immigration.php">Passport Application</a>
+          </li>
+          <li>
+            <a href="vision.html">About US</a>
+          </li>
+          <li>
+            <a href="contact.html">Contact US</a>
+          </li>
+        </ul>
       </div>
     </div>
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3 foot">
-      © 2018 Copyright: <a href="#">Zimbabwe Department of Immigration</a>
-    </div>
-  </footer>
+  </div>
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3 foot" style="color: white">
+    © 2018 Copyright: <a href="#">Zimbabwe Department of Immigration</a>
+  </div>
+</footer>
+</body>
+<script src="bs/jquery/jquery.min.js"></script>
+<script src="bs/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </html>

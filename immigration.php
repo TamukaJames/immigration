@@ -55,9 +55,9 @@ if(isset($_POST['submit']))
   <meta content="" name="description">
   <meta content="" name="author">
   <title>Zimbabwe Online Passport Application</title>
-  
+
   <link href="bs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
- 
+
   <link href="css/styles.css" rel="stylesheet">
   <script src="/bs/jquery/jquery.min.js"></script>
 </head>
@@ -102,10 +102,11 @@ if(isset($_POST['submit']))
   <br>
   <br>
   <div class="container jumbotron">
-  <h2 align="center">Your information has been successfully recorded and added. Feel free to browse around the site to learn more about the immigration Department</h2>
-    </div>
+    <h2 align="center">Your information has been successfully recorded and added. Feel free to browse around the site
+      to learn more about the immigration Department</h2>
+  </div>
 
-<footer class="page-footer font-small bg-dark pt-4">
+  <footer class="page-footer font-small bg-dark pt-4">
     <!-- Footer Links -->
     <div class="container-fluid text-center text-md-left">
 
@@ -113,9 +114,10 @@ if(isset($_POST['submit']))
 
         <div class="col-lg-6 mt-md-0 mt-3">
 
-          <h5 class="text-uppercase foot">The Department you can trust</h5>
+          <h5 class="text-uppercase foot" style="color: white">The Department you can trust</h5>
           <br>
-          <p class="foot">If you encounter any problems while using this site, please don't hesitate to contact the
+          <p class="foot" style="color: white">If you encounter any problems while using this site, please don't
+            hesitate to contact the
             department to
             give your feeback</p>
         </div>
@@ -128,23 +130,28 @@ if(isset($_POST['submit']))
           <h5 class="text-uppercase foot">Links</h5>
           <ul class="list-unstyled">
             <li>
-              <a href="#!">Home</a>
+              <a href="index.html">Home</a>
             </li>
             <li>
-              <a href="#!">Passport Application</a>
+              <a href="immigration.php">Passport Application</a>
             </li>
             <li>
-              <a href="#!">About US</a>
+              <a href="vision.html">About US</a>
             </li>
             <li>
-              <a href="#!">Contact US</a>
+              <a href="contact.html">Contact US</a>
             </li>
           </ul>
         </div>
       </div>
     </div>
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3 foot">
+    <div class="footer-copyright text-center py-3 foot" style="color: white">
       © 2018 Copyright: <a href="#">Zimbabwe Department of Immigration</a>
     </div>
   </footer>
+</body>
+<script src="bs/jquery/jquery.min.js"></script>
+<script src="bs/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</html>
